@@ -12,16 +12,34 @@ public class Planet
     }
     
     public String[] getPlanetInformation(){
-        String distance = String.valueOf(this.distanceFormEarth) + " million km";  
+        String distance = String.valueOf(this.distanceFormEarth);  
         String[] spacePort = createSpacePort();
-        String[] planetInformation = {this.planetName, distance, spacePort[0], spacePort[1]};
+        String[] planetInformation = {this.planetName , distance , spacePort[0] , spacePort[1]};
         return planetInformation;
+    }
+    
+    public String getPlanetName(){
+        return this.planetName;
+    }
+    
+    public float getdetanceFormEarth(){
+        return this.distanceFormEarth;
+    }
+    
+    public String getPlanetStationName(){
+        String[] spacePort = createSpacePort();
+        return spacePort[0];
+    }
+    
+    public String getPlanetOrbitStationName(){
+        String[] spacePort = createSpacePort();
+        return spacePort[1];
     }
     
     private String[] createSpacePort(){
         String stationName = this.planetName + " Space Port";
-        String launchPadName = this.planetName + " Launch Pad";
-        SpaceportStation spaceStation = new SpaceportStation(stationName,launchPadName);
+        String orbitPortName = this.planetName + " Orbit Port";
+        SpaceStation spaceStation = new SpaceStation(stationName,orbitPortName);
         String[] getStationInformation = spaceStation.getSpacePortInformation();
         return getStationInformation;
     }

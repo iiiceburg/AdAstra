@@ -9,6 +9,8 @@ public class BookginSystem
             menu();
             Scanner menuSelected = new Scanner(System.in);
             int menuNo = menuSelected.nextInt();
+            //PlanetTourInformation data = new PlanetTourInformation();
+            //data.getPlanetTourInformation();
             
             switch(menuNo){
                 case 1:

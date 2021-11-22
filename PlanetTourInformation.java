@@ -1,19 +1,21 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PlanetTourInformation
 {
-    private String tourId;
     private String tourName;
-    private Date tourStartDate;
-    private Date tourEndDate;
-    private String estimationTime;
+    private ArrayList<Planet> destination;
+    protected Date tourStartDate;
+    protected Date tourEndDate;
+    protected String estimationTime;
+    protected float totalOfDistance;
     
     public PlanetTourInformation(){
-        this.tourId = tourId;
         this.tourName = tourName;
         this.tourStartDate = tourStartDate;
         this.tourEndDate = tourEndDate;
-        this.estimationTime = estimationTime;
     }
     
     public Planet[] createPlanet(){
@@ -25,7 +27,15 @@ public class PlanetTourInformation
         return planets;
     }
     
+    public void packages(){
+         String tourName = this.tourName;
+         Planet[] planets = createPlanet();
+         for(Planet planet:planets){
+             ;
+         }
+    }
+    
     public void getPlanetTourInformation(){
-        System.out.println("a");
+
     }
 }
