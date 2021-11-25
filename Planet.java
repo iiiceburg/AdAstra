@@ -6,9 +6,23 @@ public class Planet
     private float distanceFormEarth;
     
     //methods
-    public Planet(String planetName, float distanceFormEarth){
+    public Planet(){
+        this.planetName = "";
+        this.distanceFormEarth = 0.0f;
+    }
+    
+    private Planet(String planetName, float distanceFormEarth){
         this.planetName = planetName;
         this.distanceFormEarth = distanceFormEarth;
+    }
+    
+    public Planet[] createPlanet(){
+        Planet[] planets = new Planet[4];
+        planets[0] = new Planet("Earth",0f);
+        planets[1] = new Planet("Mercury",77f);
+        planets[2] = new Planet("Venus", 100f);
+        planets[3] = new Planet("Mars", 220f);
+        return planets;
     }
     
     public String[] getPlanetInformation(){
@@ -35,10 +49,11 @@ public class Planet
         String[] spacePort = createSpacePort();
         return spacePort[1];
     }
+
     
     private String[] createSpacePort(){
-        String stationName = this.planetName + " Space Port";
-        String orbitPortName = this.planetName + " Orbit Port";
+        String stationName = this.planetName.concat(" Space Port");
+        String orbitPortName = this.planetName.concat(" Orbit Port");
         SpaceStation spaceStation = new SpaceStation(stationName,orbitPortName);
         String[] getStationInformation = spaceStation.getSpacePortInformation();
         return getStationInformation;
