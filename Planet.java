@@ -1,9 +1,11 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+
 public class Planet
 {
     //data members
     private String planetName;
     private float distanceFormEarth;
+    private static ArrayList<Planet> PlanetStationArray = new ArrayList<Planet>();
     
     //methods
     public Planet(){
@@ -16,20 +18,26 @@ public class Planet
         this.distanceFormEarth = distanceFormEarth;
     }
     
-    public Planet[] createPlanet(){
+    protected static Planet[] createPlanet(){
         Planet[] planets = new Planet[4];
         planets[0] = new Planet("Earth",0f);
         planets[1] = new Planet("Mercury",77f);
         planets[2] = new Planet("Venus", 100f);
         planets[3] = new Planet("Mars", 220f);
         return planets;
-    }   
+    }
+    
+    public static void planetStation(){
+        for(Planet planet:createPlanet()){
+            Planet.PlanetStationArray.add(planet);
+        }
+    }
     
     public String getPlanetName(){
         return this.planetName;
     }
     
-    public float getdetanceFormEarth(){
+    public float getDistanceFormEarth(){
         return this.distanceFormEarth;
     }
     
@@ -41,8 +49,8 @@ public class Planet
     public String getPlanetOrbitStationName(){
         String[] spacePort = createSpacePort();
         return spacePort[1];
-    }
-    
+    } 
+      
     private String[] createSpacePort(){
         String stationName = this.planetName.concat(" Space Port");
         String orbitPortName = this.planetName.concat(" Orbit Port");
