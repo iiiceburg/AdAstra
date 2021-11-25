@@ -10,7 +10,7 @@ public class Spaceship
         this.capacity = capacity;
     }
     
-    public String getSpaceshipInformation(){
+    public String getSpaceshipName(){
         return this.spaceShipName;
     }
     

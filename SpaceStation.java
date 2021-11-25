@@ -10,7 +10,7 @@ public class SpaceStation
         this.orbitPortName = orbitPortName;
     }
         
-    protected String[] getSpacePortInformation(){
+    public String[] getSpacePortInformation(){
         String[] spacePort =  {this.stationName,this.orbitPortName};
         return spacePort;
     }

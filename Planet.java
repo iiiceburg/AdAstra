@@ -11,7 +11,7 @@ public class Planet
         this.distanceFormEarth = 0.0f;
     }
     
-    private Planet(String planetName, float distanceFormEarth){
+    public Planet(String planetName, float distanceFormEarth){
         this.planetName = planetName;
         this.distanceFormEarth = distanceFormEarth;
     }
@@ -23,14 +23,7 @@ public class Planet
         planets[2] = new Planet("Venus", 100f);
         planets[3] = new Planet("Mars", 220f);
         return planets;
-    }
-    
-    public String[] getPlanetInformation(){
-        String distance = String.valueOf(this.distanceFormEarth);  
-        String[] spacePort = createSpacePort();
-        String[] planetInformation = {this.planetName , distance , spacePort[0] , spacePort[1]};
-        return planetInformation;
-    }
+    }   
     
     public String getPlanetName(){
         return this.planetName;
@@ -49,7 +42,6 @@ public class Planet
         String[] spacePort = createSpacePort();
         return spacePort[1];
     }
-
     
     private String[] createSpacePort(){
         String stationName = this.planetName.concat(" Space Port");
