@@ -20,7 +20,7 @@ public class Passenger
         this.emergencyContactInformation = emergencyContactInformation;        
     }
     
-    public static void addPassenger(int amount){
+    protected static void addPassenger(int amount){
         for(int i=0; i < amount; i++){
             System.out.println("");
             System.out.println("Enter Passenger Infomation No. ".concat(String.valueOf(i+1)));
@@ -46,7 +46,7 @@ public class Passenger
         }
     }
       
-    public static void getPassengerInfomation(){
+    public static void showPassengerInfomation(){
         for(int i=0; i < Passenger.PassengerArray.size(); i++){
             System.out.println("");
             System.out.println("### Passenger Infomation No. ".concat(String.valueOf(i+1)).concat(" ###"));

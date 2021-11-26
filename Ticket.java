@@ -2,14 +2,14 @@ import java.util.ArrayList;
 
 public class Ticket
 {    
-    public static void getTicketInfomation(int packageNo, int stationNo){
-        Passenger.getPassengerInfomation();
+    public static void showTicketInfomation(int packageNo, int stationNo){
+        Passenger.showPassengerInfomation();
         switch(packageNo){
             case 1:
                 try
                 {
-                    PlanetTourInformation.getOnePackagesTourInformation(0);
-                    PlanetTourInformation.getOnePackageStationDestinationInformation(0, stationNo);
+                    PlanetTourInformation.showOnePackagesTourInformation(0);
+                    PlanetTourInformation.showOnePackageStationDestinationInformation(0, stationNo);
                 }
                 catch (java.text.ParseException pe)
                 {
@@ -19,8 +19,8 @@ public class Ticket
             case 2:
                 try
                 {
-                    PlanetTourInformation.getOnePackagesTourInformation(1);
-                    PlanetTourInformation.getOnePackageStationDestinationInformation(1, stationNo);
+                    PlanetTourInformation.showOnePackagesTourInformation(1);
+                    PlanetTourInformation.showOnePackageStationDestinationInformation(1, stationNo);
                 }
                 catch (java.text.ParseException pe)
                 {
@@ -30,8 +30,8 @@ public class Ticket
             case 3:
                 try
                 {
-                    PlanetTourInformation.getOnePackagesTourInformation(2);
-                    PlanetTourInformation.getOnePackageStationDestinationInformation(2, stationNo);
+                    PlanetTourInformation.showOnePackagesTourInformation(2);
+                    PlanetTourInformation.showOnePackageStationDestinationInformation(2, stationNo);
                 }
                 catch (java.text.ParseException pe)
                 {
@@ -41,7 +41,7 @@ public class Ticket
             case 4:
                 try
                 {
-                    PlanetTourInformation.getOnePackagesTourInformation(3);
+                    PlanetTourInformation.showOnePackagesTourInformation(3);
                 }
                 catch (java.text.ParseException pe)
                 {

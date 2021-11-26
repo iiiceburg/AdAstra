@@ -12,7 +12,7 @@ public class PlanetTourInformation
     private float totalOfDistance;
     private String planetStation;
     private String orbitStation;
-    private static ArrayList<PlanetTourInformation> TourInformationArray = new ArrayList<PlanetTourInformation>(3);
+    private static ArrayList<PlanetTourInformation> TourInformationArray = new ArrayList<PlanetTourInformation>();
     
     public PlanetTourInformation(){
         
@@ -89,7 +89,7 @@ public class PlanetTourInformation
         }
     }
             
-    public static void getAllPackagesTourInformation() throws ParseException {
+    public static void showAllPackagesTourInformation() throws ParseException {
         for(int i = 0; i < PlanetTourInformation.TourInformationArray.size(); i++){
             System.out.println("-----------------------------------------------------------------------------------");
             System.out.println("Package : ".concat(PlanetTourInformation.TourInformationArray.get(i).getTourName()));
@@ -102,7 +102,7 @@ public class PlanetTourInformation
         System.out.println("-----------------------------------------------------------------------------------");
     }
     
-    public static void getOnePackagesTourInformation(int packageNo) throws ParseException {
+    public static void showOnePackagesTourInformation(int packageNo) throws ParseException {
         System.out.println("-----------------------------------------------------------------------------------");
         System.out.println("Package : ".concat(PlanetTourInformation.TourInformationArray.get(packageNo).getTourName()));
         System.out.println("Destination : ".concat(PlanetTourInformation.TourInformationArray.get(packageNo).getDestination()));
@@ -113,7 +113,7 @@ public class PlanetTourInformation
         System.out.println("-----------------------------------------------------------------------------------");
     }
     
-    public static void getOnePackageStationDestinationInformation(int packageNo, int typeOfStationDestination) {
+    public static void showOnePackageStationDestinationInformation(int packageNo, int typeOfStationDestination) {
         if(typeOfStationDestination == 1){
             System.out.println("Package Station Destination : ".concat(PlanetTourInformation.TourInformationArray.get(packageNo).getPackagePlanetStation()));
         }

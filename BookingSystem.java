@@ -32,7 +32,7 @@ public class BookingSystem
                         try
                         {
                             clear();
-                            PlanetTourInformation.getAllPackagesTourInformation();
+                            PlanetTourInformation.showAllPackagesTourInformation();
                         }
                         catch (java.text.ParseException pe)
                         {
@@ -150,8 +150,8 @@ public class BookingSystem
                         clear();
                         
                         System.out.println("### Ticket ###");
-                        Ticket.getTicketInfomation(packageNo, stationNo);
-                        System.out.println("Spaceship : ".concat(falconMKI.getSpaceshipName()));
+                        Ticket.showTicketInfomation(packageNo, stationNo);
+                        System.out.println("Orbit to Orbit Spaceship : ".concat(falconMKI.getSpaceshipName()));
                         System.out.println("-----------------------------------------------------------------------------------");
                         System.out.println("");
                         System.out.println("This is a really vital message. This message will appear only once.");
@@ -178,8 +178,8 @@ public class BookingSystem
                         passengers.addPassenger(amountAirless);
                         clear();
                         
-                        Ticket.getTicketInfomation(packageNo, stationNo);
-                        System.out.println("Spaceship : ".concat(falconMKII.getSpaceshipName()));
+                        Ticket.showTicketInfomation(packageNo, stationNo);
+                        System.out.println("Airless Lander Spaceship : ".concat(falconMKII.getSpaceshipName()));
                         System.out.println("-----------------------------------------------------------------------------------");
                         
                         System.out.println("");
@@ -201,7 +201,7 @@ public class BookingSystem
                     try
                     {
                         clear();
-                        PlanetTourInformation.getAllPackagesTourInformation();
+                        PlanetTourInformation.showAllPackagesTourInformation();
                     }
                     catch (java.text.ParseException pe)
                     {
