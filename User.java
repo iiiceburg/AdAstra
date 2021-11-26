@@ -31,8 +31,6 @@ public class User
     
     public boolean login(){
         for(int i=0; i < User.Account.size(); i++){
-            System.out.println(User.Account.get(i).getUsername());
-            System.out.println(User.Account.get(i).getPassword());
             if(this.username.equals(User.Account.get(i).getUsername()) && this.password.equals(User.Account.get(i).getPassword())){
                 return true;
             }

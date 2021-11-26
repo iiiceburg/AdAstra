@@ -5,8 +5,6 @@ public class Planet
     //data members
     private String planetName;
     private float distanceFormEarth;
-    private static ArrayList<Planet> PlanetStationArray = new ArrayList<Planet>();
-    
     //methods
     public Planet(){
         this.planetName = "";
@@ -26,13 +24,7 @@ public class Planet
         planets[3] = new Planet("Mars", 220f);
         return planets;
     }
-    
-    public static void planetStation(){
-        for(Planet planet:createPlanet()){
-            Planet.PlanetStationArray.add(planet);
-        }
-    }
-    
+        
     public String getPlanetName(){
         return this.planetName;
     }

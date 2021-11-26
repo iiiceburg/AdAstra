@@ -7,7 +7,7 @@ public class Passenger
     private String universalPassportId;
     private String congenitalDisease;
     private String emergencyContactInformation;
-    private static ArrayList<Passenger> PassengerArray = new ArrayList<Passenger>();
+    protected static ArrayList<Passenger> PassengerArray = new ArrayList<Passenger>();
     
     public Passenger(){
         

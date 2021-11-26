@@ -8,12 +8,17 @@ public class BookingSystem
     public static void main(String [] args) {
         boolean isWorking = true;
         while(isWorking){
+            System.out.println("");
+            System.out.println("");
             menu();
             Scanner menuSelected = new Scanner(System.in);
+            System.out.print("Enter menu : ");  
             int menuNo = menuSelected.nextInt();
                         
             switch(menuNo){
                 case 1:
+                    System.out.println("");
+                    System.out.println("--- Login ---");
                     Scanner username = new Scanner(System.in);
                     System.out.print("Enter your username : ");  
                     String userName = username.nextLine();
@@ -26,6 +31,7 @@ public class BookingSystem
                         PlanetTourInformation.tourInformation();
                         try
                         {
+                            clear();
                             PlanetTourInformation.getAllPackagesTourInformation();
                         }
                         catch (java.text.ParseException pe)
@@ -34,13 +40,16 @@ public class BookingSystem
                         }
                         packageMenu();
                         packageSelection();
-                        clear();
+                        isWorking = false;
+                        System.out.println("Thank you, Bon Voyage");
                     } else{
                         System.out.println("Username or Password is invalid!");
                         System.out.println("Please try again!");
                     }
                     break;
                 case 2:
+                    System.out.println("");
+                    System.out.println("--- Register ---");
                     User.register();
                     break;
                 case 3:
@@ -71,7 +80,7 @@ public class BookingSystem
         System.out.println("1.Atlas");
         System.out.println("2.Horizon");
         System.out.println("3.Chronicle");
-        System.out.println("4.Back to main menu");
+        System.out.println("4.End the program");
     }
     
     private static void packageSelection(){
@@ -114,27 +123,6 @@ public class BookingSystem
         }
     }
     
-    private static void planetStationInformation(){
-        Planet[] planets = Planet.createPlanet();
-        Planet earth = planets[0];
-        Planet mercury = planets[1];
-        Planet venus = planets[2];
-        Planet mars = planets[3];
-        
-        String earthStationName = earth.getPlanetStationName();
-        String earthOrbitStationName = earth.getPlanetOrbitStationName();
-        
-        String mercuryStationName = mercury.getPlanetStationName();
-        String mercuryOrbitStationName = mercury.getPlanetOrbitStationName();
-        
-        String venusStationName = venus.getPlanetStationName();
-        String venusOrbitStationName = venus.getPlanetOrbitStationName();
-        
-        String marsStationName = mars.getPlanetStationName();
-        String marsOrbitStationName = mars.getPlanetOrbitStationName();
-        
-    }
-    
     private static void stationMenu(){
         System.out.println("# Please select station destination #");
         System.out.println("1.Planet Station");
@@ -160,10 +148,18 @@ public class BookingSystem
                         Passenger passengers = new Passenger();
                         passengers.addPassenger(amountOrbit);
                         clear();
+                        
                         System.out.println("### Ticket ###");
-                        Ticket.getTicketInfomation(packageNo);
+                        Ticket.getTicketInfomation(packageNo, stationNo);
+                        System.out.println("Spaceship : ".concat(falconMKI.getSpaceshipName()));
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        System.out.println("");
+                        System.out.println("This is a really vital message. This message will appear only once.");
+                        System.out.println("Please save this information by taking a screen shot or photograph!");
+                        System.out.println("");
+                        
                         Scanner backToMain = new Scanner(System.in);
-                        System.out.print("Enter any key for back to main menu : ");
+                        System.out.print("Enter any key for end program : ");
                         backToMain.next();
                         isWorking = false;
                     }else{
@@ -181,9 +177,18 @@ public class BookingSystem
                         Passenger passengers = new Passenger();
                         passengers.addPassenger(amountAirless);
                         clear();
-                        Ticket.getTicketInfomation(packageNo);
+                        
+                        Ticket.getTicketInfomation(packageNo, stationNo);
+                        System.out.println("Spaceship : ".concat(falconMKII.getSpaceshipName()));
+                        System.out.println("-----------------------------------------------------------------------------------");
+                        
+                        System.out.println("");
+                        System.out.println("This is a really vital message. This message will appear only once.");
+                        System.out.println("Please save this information by taking a screen shot or photograph!");
+                        System.out.println("");
+                        
                         Scanner backToMain = new Scanner(System.in);
-                        System.out.print("Enter any key for back to main menu : ");
+                        System.out.print("Enter any key for end program : ");
                         backToMain.next();
                         isWorking = false;
                     }else{
@@ -192,6 +197,18 @@ public class BookingSystem
                     break;
                 case 3:
                     isWorking = false;
+                    PlanetTourInformation.tourInformation();
+                    try
+                    {
+                        clear();
+                        PlanetTourInformation.getAllPackagesTourInformation();
+                    }
+                    catch (java.text.ParseException pe)
+                    {
+                        pe.printStackTrace();
+                    }
+                    packageMenu();
+                    packageSelection();
                     break;
                 default:
                     packageMenu();
