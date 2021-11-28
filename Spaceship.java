@@ -5,16 +5,16 @@ public class Spaceship
     private int capacity;
     
     //methods
-    public Spaceship(String spaceShipName, int capacity){
+    protected Spaceship(String spaceShipName, int capacity){
         this.spaceShipName = spaceShipName;
         this.capacity = capacity;
     }
     
-    public String getSpaceshipName(){
+    protected String getSpaceshipName(){
         return this.spaceShipName;
     }
     
-    public int getSpaceshipCapacity(){
+    protected int getSpaceshipCapacity(){
         return this.capacity;
     }
 }

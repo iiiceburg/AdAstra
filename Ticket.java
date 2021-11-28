@@ -2,13 +2,12 @@ import java.util.ArrayList;
 
 public class Ticket
 {    
-    public static void showTicketInfomation(int packageNo, int stationNo){
-        Passenger.showPassengerInfomation();
+    public static void showTicketInfomation(int packageNo, int stationNo, int amount){
         switch(packageNo){
             case 1:
                 try
                 {
-                    PlanetTourInformation.showOnePackagesTourInformation(0);
+                    PlanetTourInformation.showOnePackagesTourInformation(0, amount);
                     PlanetTourInformation.showOnePackageStationDestinationInformation(0, stationNo);
                 }
                 catch (java.text.ParseException pe)
@@ -19,7 +18,7 @@ public class Ticket
             case 2:
                 try
                 {
-                    PlanetTourInformation.showOnePackagesTourInformation(1);
+                    PlanetTourInformation.showOnePackagesTourInformation(1, amount);
                     PlanetTourInformation.showOnePackageStationDestinationInformation(1, stationNo);
                 }
                 catch (java.text.ParseException pe)
@@ -30,7 +29,7 @@ public class Ticket
             case 3:
                 try
                 {
-                    PlanetTourInformation.showOnePackagesTourInformation(2);
+                    PlanetTourInformation.showOnePackagesTourInformation(2, amount);
                     PlanetTourInformation.showOnePackageStationDestinationInformation(2, stationNo);
                 }
                 catch (java.text.ParseException pe)
@@ -41,13 +40,14 @@ public class Ticket
             case 4:
                 try
                 {
-                    PlanetTourInformation.showOnePackagesTourInformation(3);
+                    PlanetTourInformation.showOnePackagesTourInformation(3, amount);
                 }
                 catch (java.text.ParseException pe)
                 {
                     pe.printStackTrace();
                 }
                 break;
-        }    
+        } 
+        Passenger.showPassengerInfomation();
     }
 }

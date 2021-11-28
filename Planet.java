@@ -6,12 +6,8 @@ public class Planet
     private String planetName;
     private float distanceFormEarth;
     //methods
-    public Planet(){
-        this.planetName = "";
-        this.distanceFormEarth = 0.0f;
-    }
     
-    public Planet(String planetName, float distanceFormEarth){
+    protected Planet(String planetName, float distanceFormEarth){
         this.planetName = planetName;
         this.distanceFormEarth = distanceFormEarth;
     }
@@ -25,20 +21,20 @@ public class Planet
         return planets;
     }
         
-    public String getPlanetName(){
+    protected String getPlanetName(){
         return this.planetName;
     }
     
-    public float getDistanceFormEarth(){
+    protected float getDistanceFormEarth(){
         return this.distanceFormEarth;
     }
     
-    public String getPlanetStationName(){
+    protected String getPlanetStationName(){
         String[] spacePort = createSpacePort();
         return spacePort[0];
     }
     
-    public String getPlanetOrbitStationName(){
+    protected String getPlanetOrbitStationName(){
         String[] spacePort = createSpacePort();
         return spacePort[1];
     } 

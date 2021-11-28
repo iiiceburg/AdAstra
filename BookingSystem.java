@@ -2,9 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class BookingSystem
-{
-    private static ArrayList<String> Packages;
-    
+{    
     public static void main(String [] args) {
         boolean isWorking = true;
         while(isWorking){
@@ -25,10 +23,9 @@ public class BookingSystem
                     Scanner password = new Scanner(System.in);
                     System.out.print("Enter your password : ");  
                     String pwd = password.nextLine();
-                    User user = new User(userName,pwd);
-                    if(user.login()){
+                    if(User.login(userName, pwd)){
                         System.out.println("#Login Successfully");
-                        PlanetTourInformation.tourInformation();
+                        PlanetTourInformation.createTourInformation();
                         try
                         {
                             clear();
@@ -50,7 +47,13 @@ public class BookingSystem
                 case 2:
                     System.out.println("");
                     System.out.println("--- Register ---");
-                    User.register();
+                    Scanner usernameInput = new Scanner(System.in);
+                    System.out.print("Enter your username : ");  
+                    String usernameRegister = usernameInput.nextLine();
+                    Scanner passwordInput = new Scanner(System.in);
+                    System.out.print("Enter your password : ");  
+                    String passwordRegister = passwordInput.nextLine();
+                    User.register(usernameRegister,passwordRegister);
                     break;
                 case 3:
                     isWorking = false;
@@ -145,13 +148,15 @@ public class BookingSystem
                     int amountOrbit = amountOrbitInput.nextInt();
                     
                     if(amountOrbit <= 10){
-                        Passenger passengers = new Passenger();
-                        passengers.addPassenger(amountOrbit);
+                        Passenger.addPassenger(amountOrbit);
                         clear();
                         
                         System.out.println("### Ticket ###");
-                        Ticket.showTicketInfomation(packageNo, stationNo);
+                        Ticket.showTicketInfomation(packageNo, stationNo, amountOrbit);
+                        System.out.println("-----------------------------------------------------------------------------------");
                         System.out.println("Orbit to Orbit Spaceship : ".concat(falconMKI.getSpaceshipName()));
+                        System.out.println("Spaceship Capacity : ".concat(String.valueOf(falconMKI.getSpaceshipCapacity())));
+                        System.out.println("Amount of tickets : ".concat(String.valueOf(amountOrbit)));
                         System.out.println("-----------------------------------------------------------------------------------");
                         System.out.println("");
                         System.out.println("This is a really vital message. This message will appear only once.");
@@ -174,12 +179,15 @@ public class BookingSystem
                     int amountAirless = amountAirlessInput.nextInt();
                     
                     if(amountAirless <= 10){
-                        Passenger passengers = new Passenger();
-                        passengers.addPassenger(amountAirless);
+                        Passenger.addPassenger(amountAirless);
                         clear();
                         
-                        Ticket.showTicketInfomation(packageNo, stationNo);
+                        System.out.println("### Ticket ###");
+                        Ticket.showTicketInfomation(packageNo, stationNo, amountAirless);
+                        System.out.println("-----------------------------------------------------------------------------------");
                         System.out.println("Airless Lander Spaceship : ".concat(falconMKII.getSpaceshipName()));
+                        System.out.println("Spaceship Capacity : ".concat(String.valueOf(falconMKII.getSpaceshipCapacity())));
+                        System.out.println("Amount of tickets : ".concat(String.valueOf(amountAirless)));
                         System.out.println("-----------------------------------------------------------------------------------");
                         
                         System.out.println("");
@@ -197,7 +205,7 @@ public class BookingSystem
                     break;
                 case 3:
                     isWorking = false;
-                    PlanetTourInformation.tourInformation();
+                    PlanetTourInformation.createTourInformation();
                     try
                     {
                         clear();

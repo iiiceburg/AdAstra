@@ -5,44 +5,33 @@ public class User
 {
     private String username;
     private String password;
-    private static ArrayList<User> Account = new ArrayList<User>();
+    private static ArrayList<User> ACCOUNT = new ArrayList<User>();
     
-    public User(){
-        this.username = "none";
-        this.password = "none";
-    }
-    
-    public User(String username, String password){
+    protected User(String username, String password){
         this.username = username;
         this.password = password;
     }
     
-    public static void register(){
-        Scanner username = new Scanner(System.in);
-        System.out.print("Enter your username : ");  
-        String userName = username.nextLine();
-        Scanner password = new Scanner(System.in);
-        System.out.print("Enter your password : ");  
-        String pwd = password.nextLine();
-        User newUser = new User(userName,pwd);
-        User.Account.add(newUser);
+    public static void register(String username, String password){
+        User newUser = new User(username,password);
+        User.ACCOUNT.add(newUser);
         System.out.println("#Register Successfully");
     }
     
-    public boolean login(){
-        for(int i=0; i < User.Account.size(); i++){
-            if(this.username.equals(User.Account.get(i).getUsername()) && this.password.equals(User.Account.get(i).getPassword())){
+    public static boolean login(String username, String password){
+        for(int i=0; i < User.ACCOUNT.size(); i++){
+            if(username.equals(User.ACCOUNT.get(i).getUsername()) && password.equals(User.ACCOUNT.get(i).getPassword())){
                 return true;
             }
         }          
         return false;
     }
     
-    public String getUsername(){
+    protected String getUsername(){
         return this.username;
     }
     
-    public String getPassword(){
+    protected String getPassword(){
         return this.password;
     }
 }

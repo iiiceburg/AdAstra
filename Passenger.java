@@ -7,17 +7,29 @@ public class Passenger
     private String universalPassportId;
     private String congenitalDisease;
     private String emergencyContactInformation;
-    protected static ArrayList<Passenger> PassengerArray = new ArrayList<Passenger>();
-    
-    public Passenger(){
+    private static ArrayList<Passenger> PASSENGERARRAY = new ArrayList<Passenger>();
         
-    }
-    
-    public Passenger(String name, String universalPassportId, String congenitalDisease, String emergencyContactInformation){
+    protected Passenger(String name, String universalPassportId, String congenitalDisease, String emergencyContactInformation){
         this.name = name;
         this.universalPassportId = universalPassportId;
         this.congenitalDisease = congenitalDisease;
         this.emergencyContactInformation = emergencyContactInformation;        
+    }
+    
+    protected String getPassengerName(){
+        return this.name;
+    }
+    
+    protected String getUniversalPassportId(){
+        return this.universalPassportId;
+    }
+    
+    protected String getCongenitalDiseasee(){
+        return this.congenitalDisease;
+    }
+    
+    protected String getEmergencyContactInformation(){
+        return this.emergencyContactInformation;
     }
     
     protected static void addPassenger(int amount){
@@ -42,35 +54,19 @@ public class Passenger
             String emergencyContactInformation = emergencyContactInformationInput.nextLine();
             
             Passenger passenger = new Passenger(name, universalPassportID, congenitalDisease, emergencyContactInformation);
-            Passenger.PassengerArray.add(passenger);
+            Passenger.PASSENGERARRAY.add(passenger);
         }
     }
       
     public static void showPassengerInfomation(){
-        for(int i=0; i < Passenger.PassengerArray.size(); i++){
+        for(int i=0; i < Passenger.PASSENGERARRAY.size(); i++){
             System.out.println("");
             System.out.println("### Passenger Infomation No. ".concat(String.valueOf(i+1)).concat(" ###"));
-            System.out.println("Passnger Name : ".concat(Passenger.PassengerArray.get(i).getPassengerName()));
-            System.out.println("Universal Passport : ".concat(Passenger.PassengerArray.get(i).getUniversalPassportId()));
-            System.out.println("Congenital Disease : ".concat(Passenger.PassengerArray.get(i).getCongenitalDiseasee()));
-            System.out.println("Emergency Contact : ".concat(Passenger.PassengerArray.get(i).getEmergencyContactInformation()));
+            System.out.println("Passnger Name : ".concat(Passenger.PASSENGERARRAY.get(i).getPassengerName()));
+            System.out.println("Universal Passport : ".concat(Passenger.PASSENGERARRAY.get(i).getUniversalPassportId()));
+            System.out.println("Congenital Disease : ".concat(Passenger.PASSENGERARRAY.get(i).getCongenitalDiseasee()));
+            System.out.println("Emergency Contact : ".concat(Passenger.PASSENGERARRAY.get(i).getEmergencyContactInformation()));
+            System.out.println("");
         }
     }
-    
-    public String getPassengerName(){
-        return this.name;
-    }
-    
-    public String getUniversalPassportId(){
-        return this.universalPassportId;
-    }
-    
-    public String getCongenitalDiseasee(){
-        return this.congenitalDisease;
-    }
-    
-    public String getEmergencyContactInformation(){
-        return this.emergencyContactInformation;
-    }
-    
 }
