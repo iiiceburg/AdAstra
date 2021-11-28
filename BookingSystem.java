@@ -65,9 +65,7 @@ public class BookingSystem
     }
     
     private static void clear() {
-        for(int i = 0 ; i<=50 ;i++){
-            System.out.println("");
-        }
+        System.out.print("\u000c");
     }
     
     private static void menu(){
